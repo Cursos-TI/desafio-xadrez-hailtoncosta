@@ -17,7 +17,7 @@ int main() {
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
     int opcao;
-
+    
     //Menu de opções
     do {
         printf("-------- JOGO DE XADREZ ---------\n");
