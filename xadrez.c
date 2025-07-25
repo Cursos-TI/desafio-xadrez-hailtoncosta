@@ -65,13 +65,18 @@ int main() {
 
             case 4:
                 printf("Movimento do Cavalo (2 para baixo e 1 para esquerda): \n");
+                //Loop externo para as 2 casas para baixo
                 for (int i = 1; i <= CASAS_CAVALO_DIREITA; i++) {
                     //2 Casas para direita
                     printf("Baixo\n");
-                }
-                //1 Casa para esquerda
-                for (int j = 1; j <= CASAS_CAVALO_ESQUERDA; j++) {
-                    printf("Esquerda\n");
+                    // O loop aninhado para o "Esquerda" é ativado após o último "Baixo"
+                    if (i == CASAS_CAVALO_DIREITA) {
+                        int j = i;
+                        while (j <= CASAS_CAVALO_DIREITA) {
+                            printf("Esquerda\n");
+                            j++;
+                        }
+                    }
                 }
                 
                 break;
