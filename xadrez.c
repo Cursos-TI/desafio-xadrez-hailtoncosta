@@ -3,6 +3,9 @@
 #define CASAS_TORRE 5
 #define CASAS_BISPO 5
 #define CASAS_RAINHA 8
+#define CASAS_CAVALO_DIREITA 2
+#define CASAS_CAVALO_ESQUERDA 1
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -17,7 +20,7 @@ int main() {
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
     int opcao;
-    
+
     //Menu de opções
     do {
         printf("-------- JOGO DE XADREZ ---------\n");
@@ -26,7 +29,8 @@ int main() {
         printf("1 - Torre\n");
         printf("2 - Bispo\n");
         printf("3 - Rainha\n");
-        printf("4 - Sair\n");
+        printf("4 - Cavalo\n");
+        printf("5 - Sair\n");
         printf("Escolha uma opção para movimentar a peça: ");
         scanf("%d", &opcao);
 
@@ -59,11 +63,20 @@ int main() {
                 } while (passo_rainha <= CASAS_RAINHA);
                 break;
 
+            case 4:
+                printf("Movimento do Cavalo (2 para baixo e 1 para esquerda): \n");
+                for (int i = 1; i <= CASAS_CAVALO_DIREITA; i++) {
+                    for (int j = 1; j <= CASAS_CAVALO_ESQUERDA; j++) {
+                        printf("Passo %d Baixo, %d Esquerda\n", i, j);
+                    }
+                }
+                break;
+
             default:
                 printf("Opção inválida...\n");
                 break;
         }
-    } while (opcao != 4);
+    } while (opcao != 5);
     
     return 0;
 }
