@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+#define CASAS_TORRE 5
+#define CASAS_BISPO 5
+#define CASAS_RAINHA 8
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -31,7 +34,7 @@ int main() {
         {   //movimento da peça Torre (5 casas para direita)
             case 1:
                 printf("Movimento da Torre (5 casas para Direita)\n");
-                for (int i = 1; i <= 5; i++) {
+                for (int i = 1; i <= CASAS_TORRE; i++) {
                     printf("Passo %d Direita\n", i);
                 }
                 break;
@@ -40,7 +43,7 @@ int main() {
             case 2:
                 printf("Movimento do Bispo (5 casas na diagonal Cima, Direita:) \n");
                 int passo_bispo = 1;
-                while (passo_bispo <= 5) {
+                while (passo_bispo <= CASAS_BISPO) {
                     printf("Passo %d: Cima, Direita\n", passo_bispo);
                     passo_bispo++;
                 }
@@ -53,7 +56,7 @@ int main() {
                 do {
                     printf("Passo %d: Esquerda\n", passo_rainha);
                     passo_rainha++;
-                } while (passo_rainha <= 8);
+                } while (passo_rainha <= CASAS_RAINHA);
                 break;
 
             default:
