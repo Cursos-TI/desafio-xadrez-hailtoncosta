@@ -66,10 +66,14 @@ int main() {
             case 4:
                 printf("Movimento do Cavalo (2 para baixo e 1 para esquerda): \n");
                 for (int i = 1; i <= CASAS_CAVALO_DIREITA; i++) {
-                    for (int j = 1; j <= CASAS_CAVALO_ESQUERDA; j++) {
-                        printf("Passo %d Baixo, %d Esquerda\n", i, j);
-                    }
+                    //2 Casas para direita
+                    printf("Baixo\n");
                 }
+                //1 Casa para esquerda
+                for (int j = 1; j <= CASAS_CAVALO_ESQUERDA; j++) {
+                    printf("Esquerda\n");
+                }
+                
                 break;
 
             default:
