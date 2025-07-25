@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -17,16 +13,47 @@ int main() {
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    int opcao;
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    //Menu de opções
+    do {
+        printf("-------- JOGO DE XADREZ ---------\n");
+        printf("\n");
+        printf("MENU\n");
+        printf("1 - Torre\n");
+        printf("2 - Bispo\n");
+        printf("3 - Rainha\n");
+        printf("4 - Sair\n");
+        printf("Escolha uma opção para movimentar a peça: ");
+        scanf("%d", &opcao);
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+        switch (opcao)
+        {   //movimento da peça Torre
+            case 1:
+                printf("Direita\n");
+                break;
+            
+            //movimento da peça Bispo
+            case 2:
+                printf("Cima\n");
+                printf("Direita\n");
+                break;
+            
+            //Movimento da peça Rainha
+            case 3:
+                printf("Cima\n");
+                printf("Baixo\n");
+                printf("Esquerda\n");
+                printf("Direita\n");
+                printf("Cima Esquerda\n");
+                printf("Cima Direita");
+                break;
 
+            default:
+                printf("Opção inválida...\n");
+                break;
+        }
+    } while (opcao != 4);
+    
     return 0;
 }
