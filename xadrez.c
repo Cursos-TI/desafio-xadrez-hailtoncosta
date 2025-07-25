@@ -28,25 +28,32 @@ int main() {
         scanf("%d", &opcao);
 
         switch (opcao)
-        {   //movimento da peça Torre
+        {   //movimento da peça Torre (5 casas para direita)
             case 1:
-                printf("Direita\n");
+                printf("Movimento da Torre (5 casas para Direita)\n");
+                for (int i = 1; i <= 5; i++) {
+                    printf("Passo %d Direita\n", i);
+                }
                 break;
             
-            //movimento da peça Bispo
+            //movimento da peça Bispo (5 casa diagonal: Cima, Direita)
             case 2:
-                printf("Cima\n");
-                printf("Direita\n");
+                printf("Movimento do Bispo (5 casas na diagonal Cima, Direita:) \n");
+                int passo_bispo = 1;
+                while (passo_bispo <= 5) {
+                    printf("Passo %d: Cima, Direita\n", passo_bispo);
+                    passo_bispo++;
+                }
                 break;
             
             //Movimento da peça Rainha
             case 3:
-                printf("Cima\n");
-                printf("Baixo\n");
-                printf("Esquerda\n");
-                printf("Direita\n");
-                printf("Cima Esquerda\n");
-                printf("Cima Direita");
+                printf("Movimento da Rainha (8 casas para Esquerda): \n");
+                int passo_rainha = 1;
+                do {
+                    printf("Passo %d: Esquerda\n", passo_rainha);
+                    passo_rainha++;
+                } while (passo_rainha <= 8);
                 break;
 
             default:
