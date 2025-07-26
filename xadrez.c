@@ -9,14 +9,19 @@
 void movimentar_cavalo() {
     
     //Imprime casas verticais (cima)
-    for (int i = 0; i < CASAS_CAVALO_VERTICAL; i++) {
-        // Imprime casas horizontais (Direita) após movimentos verticais
-        printf("Cima\n"); 
-    }
-        for (int i = 0; i < CASAS_CAVALO_HORIZONTAL; i++) {
+    for (int i = 0; i < 3; i++) {
+        //Loop para 3 segmentos do movimento L
+        if (i < CASAS_CAVALO_VERTICAL) {
+            //Primeiro 2 segmentos são "Cima"
+            printf("Cima\n");
+        } else if (i == CASAS_CAVALO_VERTICAL){
+            //O ultimo segmento é "Direita"
             printf("Direita\n");
-        }    
+            break;
+        }
     }
+}   
+    
 
 void movimentar_bispo_recursiva(int passos_bispo) {
 
