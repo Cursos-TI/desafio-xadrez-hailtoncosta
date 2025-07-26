@@ -49,17 +49,6 @@ void movimentar_rainha_recursiva(int passo_rainha) {
 }
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
 
     int opcao;
 
@@ -87,7 +76,7 @@ int main() {
             //movimento da peça Bispo (5 casa diagonal: Cima, Direita)
             case 2:
                 printf("B >> ");
-                printf("Movimento do Bispo (8 casas na diagonal Cima, Direita:) \n");
+                printf("Movimento do Bispo (5 casas na diagonal Cima, Direita:) \n");
                 movimentar_bispo_recursiva(CASAS_BISPO);
                 break;
             
