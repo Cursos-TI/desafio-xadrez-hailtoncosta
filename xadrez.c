@@ -10,7 +10,7 @@ void movimentar_cavalo() {
     
     //Imprime casas verticais (cima)
     for (int i = 0; i < CASAS_CAVALO_VERTICAL; i++) {
-                    printf("Cima\n");
+        printf("Cima\n"); // Imprime casas horizontais (Direita) após movimentos verticais
     }
         for (int i = 0; i < CASAS_CAVALO_HORIZONTAL; i++) {
             printf("Direita\n");
@@ -24,9 +24,6 @@ void movimentar_bispo_recursiva(int passos_bispo) {
     }
     printf("Cima, Direita\n"); // Imprime a movimentação do Bispo
     movimentar_bispo_recursiva(passos_bispo - 1); // Chama a função recursivamente, diminuindo o número de passos restantes
-    printf("Movimento do Bispo (8 casas na diagonal Cima, Direita): \n"); // Imprime a movimentação do Bispo
-    printf("B >> "); // Imprime a letra B para indicar o Bispo
-    movimentar_bispo_recursiva(CASAS_BISPO); // Chama a função recursivamente para movimentar o Bispo
 }
 
 void movimentar_torre_recursiva(int passos_restantes) {
