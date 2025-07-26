@@ -3,26 +3,33 @@
 #define CASAS_TORRE 5
 #define CASAS_BISPO 5
 #define CASAS_RAINHA 8
-#define CASAS_CAVALO_DIREITA 2
-#define CASAS_CAVALO_ESQUERDA 1
+#define CASAS_CAVALO_VERTICAL 2
+#define CASAS_CAVALO_HORIZONTAL 1
 
-void movimentar_cavalo() {
+void movimentar_cavalo_recursiva() {
+    printf("C >> ");
     // Implementação da movimentação do Cavalo
-    for (int i = 1; i <= CASAS_CAVALO_DIREITA; i++) {
-                    //2 Casas para cima
+    for (int i = 0; i < CASAS_CAVALO_VERTICAL; i++) {
+                    //Usando a nova constante
                     printf("Cima\n");
+                    //Imprime "Cima" duas vezes na mesma linha
+    
+                    printf("Direita\n");
+
                     // O loop aninhado para o "Esquerda" é ativado após o último "direita"
-                    if (i == CASAS_CAVALO_DIREITA) {
+                    if (i == CASAS_CAVALO_VERTICAL) {
                         int j = i;
-                        while (j <= CASAS_CAVALO_DIREITA) {
+                        while (j <= CASAS_CAVALO_VERTICAL) {
                             printf("Direita\n");
                             j++;
                         }
                     }
                 }
-}
+            }
 
-void movimentar_bispo() {
+
+void movimentar_bispo_recursiva() {
+    printf("B >> ");
     // Implementação da movimentação do Bispo
     int passo_bispo = 1;
                 while (passo_bispo <= CASAS_BISPO) {
@@ -31,14 +38,21 @@ void movimentar_bispo() {
                 }
 }
 
-void movimentar_torre() {
+void movimentar_torre_recursiva(int passos_restantes) {
+    printf("T >> ");
     // Implementação da movimentação da Torre
-    for (int i = 1; i <= CASAS_TORRE; i++) {
-                    printf("Passo %d Direita\n", i);
-                }
+    if (passos_restantes == 0) {
+        return;
+    } 
+    
+    printf("Direita\n");
+    movimentar_torre_recursiva(passos_restantes - 1);
+    // A função chama a si mesma para continuar movendo a Torre até que os passos restantes
 }
 
-void movimentar_rainha() {
+
+void movimentar_rainha_recursiva() {
+    printf("R >> ");
     // Implementação da movimentação da Rainha
     int passo_rainha = 1;
                 do {
@@ -79,25 +93,25 @@ int main() {
         {   //movimento da peça Torre (5 casas para direita)
             case 1:
                 printf("Movimento da Torre (5 casas para Direita)\n");
-                movimentar_torre();
+                movimentar_torre_recursiva;
                 break;
             
             //movimento da peça Bispo (5 casa diagonal: Cima, Direita)
             case 2:
                 printf("Movimento do Bispo (5 casas na diagonal Cima, Direita:) \n");
-                movimentar_bispo();
+                movimentar_bispo_recursiva();
                 break;
             
             //Movimento da peça Rainha
             case 3:
                 printf("Movimento da Rainha (8 casas para Esquerda): \n");
-                movimentar_rainha();
+                movimentar_rainha_recursiva();
                 break;
 
             case 4:
                 printf("Movimento do Cavalo (2 para cima e 1 para direita): \n");
                 //Loop externo para as 2 casas para baixo
-                movimentar_cavalo();
+                movimentar_cavalo_recursiva();
                 
                 break;
 
