@@ -53,14 +53,13 @@ void movimentar_torre_recursiva(int passos_restantes) {
 }
 
 
-void movimentar_rainha_recursiva() {
-    
-    // Implementação da movimentação da Rainha
-    int passo_rainha = 1;
-                do {
-                    printf("Passo %d: Esquerda\n", passo_rainha);
-                    passo_rainha++;
-                } while (passo_rainha <= CASAS_RAINHA);
+void movimentar_rainha_recursiva(passo_rainha) {
+
+    if (passo_rainha == 0) {
+        return; // Caso base: se não houver passos restantes, retorna
+    }
+    printf("Esquerda\n"); // Imprime a movimentação da Rainha
+    movimentar_bispo_recursiva(passo_rainha - 1); // Chama a função recursivamente, diminuindo o número de passos restantes
 }
 
 int main() {
@@ -110,7 +109,7 @@ int main() {
             case 3:
                 printf("R >> ");
                 printf("Movimento da Rainha (8 casas para Esquerda): \n");
-                movimentar_rainha_recursiva();
+                movimentar_rainha_recursiva(CASAS_RAINHA);
                 break;
 
             case 4:
