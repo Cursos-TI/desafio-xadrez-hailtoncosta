@@ -8,25 +8,14 @@
 
 void movimentar_cavalo() {
     
-    // Implementação da movimentação do Cavalo
+    //Imprime casas verticais (cima)
     for (int i = 0; i < CASAS_CAVALO_VERTICAL; i++) {
-                    //Usando a nova constante
                     printf("Cima\n");
-                    //Imprime "Cima" duas vezes na mesma linha
-    
-                    printf("Direita\n");
-
-                    // O loop aninhado para o "Esquerda" é ativado após o último "direita"
-                    if (i == CASAS_CAVALO_VERTICAL) {
-                        int j = i;
-                        while (j <= CASAS_CAVALO_VERTICAL) {
-                            printf("Cima\n");
-                            j++;
-                        }
-                    }
-                }
-            }
-
+    }
+        for (int i = 0; i < CASAS_CAVALO_HORIZONTAL; i++) {
+            printf("Direita\n");
+        }    
+    }
 
 void movimentar_bispo_recursiva(int passos_bispo) {
 
