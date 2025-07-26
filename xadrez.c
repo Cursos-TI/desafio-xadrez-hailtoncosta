@@ -22,7 +22,6 @@ void movimentar_cavalo() {
     }
 }   
     
-
 void movimentar_bispo_recursiva(int passos_bispo) {
 
     if (passos_bispo == 0) {
